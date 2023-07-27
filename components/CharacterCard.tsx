@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { use } from 'react'
 import { Card } from 'antd'
+import { Character } from '../types/types'
+import Link from 'next/link'
 
+type Props = {
+  key: number,
+  character: Character
+}
 const { Meta } = Card
 
-type CharacterCardProps = {
-  id: number,
-  name: string,
-}
-
-const CharacterCard: React.FC = ({id, name}) => (
-  <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt="An image of a Rick and Morty character" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />}
-  >
-    <Meta title="Rick and Morty characters" description="" />
-  </Card>
+const CharacterCard: React.FC<Props> = ({ character }) => (
+  <Link href={`/${character.id}`}>
+    <Card
+      hoverable
+      style={{ margin: "auto", width: 320 }}
+      cover={<img alt="An image of a Rick and Morty character" src={character.image} />}
+    >
+      <Meta title={character.name} description={character.status} />
+    </Card>
+  </Link>
 )
 
 export default CharacterCard
