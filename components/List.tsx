@@ -4,27 +4,21 @@ import useSWR from 'swr'
 import { Character } from '../types/types'
 import CharacterCard from './CharacterCard'
 
-
-
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 type PaginationPosition = 'top' | 'bottom' | 'both'
-
 type PaginationAlign = 'start' | 'center' | 'end'
-
 type DefaultPageSize = 25
 
 const positionOptions = ['top', 'bottom', 'both']
-
 const alignOptions = ['start', 'center', 'end']
-
 const defaultPageSize: DefaultPageSize = 25
 
 const App: React.FC = () => {
     const [position, setPosition] = useState<PaginationPosition>('bottom')
     const [align, setAlign] = useState<PaginationAlign>('center')
 
-    const { data, error } = useSWR<Character[]>('/api/CharacterApi', fetcher)
+    const { data, error } = useSWR<Character[]>('/api/characters', fetcher)
 
     if (error) return <div>Failed to load</div>
     if (!data) return (

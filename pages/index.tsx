@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import List from '../components/List'
 import { Layout, Menu, Typography } from 'antd'
 
