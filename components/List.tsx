@@ -1,4 +1,4 @@
-import { List, Space, Spin } from 'antd'
+import { List, Result, Spin } from 'antd'
 import React, { useState } from 'react'
 import useSWR from 'swr'
 import { Character } from '../types/types'
@@ -20,7 +20,18 @@ const App: React.FC = () => {
 
     const { data, error } = useSWR<Character[]>('/api/characters', fetcher)
 
-    if (error) return <div>Failed to load</div>
+    if (error) return (
+        <>
+            <div className="failed">
+                <div className="failed-block">
+                <Result
+                    status="warning"
+                    title="There are some problems with your operation."
+                />
+                </div>
+            </div>
+        </>
+    )
     if (!data) return (
         <Spin size='large' tip='loading' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
            <div className="content" />
