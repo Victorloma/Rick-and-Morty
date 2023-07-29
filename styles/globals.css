@@ -34,3 +34,7 @@ a {
   align-items: center;
   text-align: center;
 }
+
+.menu {
+  padding-left: 2rem;
+}

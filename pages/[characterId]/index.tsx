@@ -18,18 +18,20 @@ const characterDetails = () => {
   if (!data) return <div>Loading...</div>
 
   return (
-    <div className='character-details'>
+    <>
       <Header />
-      <Typography.Title level={2}>Character Details</Typography.Title>
-      <Typography.Title level={4}>{data.name}</Typography.Title>
-      <Image src={data.image} alt={`Picture of ${data.name}`} />
-      <p>{data.species}</p>
-      <p>{data.created.slice(0, 10)}</p>
-      <p>{data.status}</p>
-      <p>{data.gender}</p>
-      <p>{data.location.name}</p>
-      <p>Amount of episodes: {data.episode.length}</p>
-    </div>
+      <div className='character-details'>
+        <Typography.Title level={2}>Character Details</Typography.Title>
+        <Typography.Title level={4}>{data.name}</Typography.Title>
+        <Image src={data.image} alt={`Picture of ${data.name}`} />
+        <p>{data.species}</p>
+        <p>{data.created.slice(0, 10)}</p>
+        <p>{data.status}</p>
+        <p>{data.gender}</p>
+        <p>{data.location.name}</p>
+        <p>Amount of episodes: {data.episode.length}</p>
+      </div>
+    </>
   )
 }
 
