@@ -1,13 +1,25 @@
+@font-face {
+  font-family: 'Chewy';
+  src: url('../assets/Chewy-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
 }
 
 a {
-  color: inherit;
+  color: white;
   text-decoration: none;
 }
 
@@ -25,6 +37,10 @@ a {
   }
 }
 
+main {
+  padding-bottom: 3rem;
+}
+
 .character-details,
 .stats {
   margin: auto;
@@ -33,8 +49,51 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-bottom: 0rem;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.stats > div {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 .menu {
-  padding-left: 2rem;
+  gap: 1rem;
+}
+
+.character-detail {
+  color: white;
+  margin-top: 0.75rem;
+}
+
+.character-detail > p > span {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.Chewy {
+  font-family: 'Chewy';
+  font-size: 4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: chartreuse;
+}
+
+.failed {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: 'white';
+}
+
+.failed-block {
+  background-color: #9eebcf;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
 }

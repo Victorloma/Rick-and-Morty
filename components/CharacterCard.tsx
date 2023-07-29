@@ -10,10 +10,10 @@ type Props = {
 const { Meta } = Card
 
 const CharacterCard: React.FC<Props> = ({ character }) => (
-  <Link href={`/${character.id}`}>
+  <Link href={`/${character.id}`} className='card'>
     <Card
       hoverable
-      style={{ margin: "auto", width: 320 }}
+      style={{ margin: "auto", width: 320, backgroundColor: '#9eebcf', borderColor: 'gray'}}
       cover={<img alt="An image of a Rick and Morty character" src={character.image} />}
     >
       <Meta title={character.name} description={character.status} />

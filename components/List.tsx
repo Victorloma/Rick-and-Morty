@@ -22,9 +22,9 @@ const App: React.FC = () => {
 
     if (error) return <div>Failed to load</div>
     if (!data) return (
-        <Space size="middle">
-            <Spin size="large" />
-        </Space>
+        <Spin size='large' tip='loading' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
+           <div className="content" />
+        </Spin> 
     )   
     if (data.length === 0) return <div>No characters</div>
     
@@ -49,7 +49,7 @@ const App: React.FC = () => {
                 )}
             />
         </>
-    );
-};
+    )
+}
 
-export default App;
+export default App

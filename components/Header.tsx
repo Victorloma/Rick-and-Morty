@@ -33,7 +33,7 @@ const Header: React.FC = () => {
     setCurrent(e.key)
   };
 
-  return <Menu className='menu' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+  return <Menu className='menu' style={{ background: 'inherit', color: 'white'}} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
 }
 
 export default Header
