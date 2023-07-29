@@ -1,20 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import data from '../../../evo-task-data.json'
-import { Character } from '../../../types/types'
+import { Character, Statistics } from '../../../types/types'
 
 type CharacterList = Character[]
 
-type Statistics = {
-    top3Characters: CharacterList,
-    mostAssignedStatus: string,
-    popularHumanLocation: string,
-    mostMales: string,
-}
-    
+type stats = Statistics
+
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<stats>
 ) {
     // top 3 characters with most episodes
     const top3Characters: CharacterList = data.sort((a, b) => b.episode.length - a.episode.length).slice(0, 3)
@@ -56,18 +51,16 @@ export default function handler(
     // species with most males
     const males: CharacterList = data.filter(character => character.gender === 'Male')
 
-    const malesPerSpecies = (): any => {
-        males.reduce((acc: any, curr: any) => {
+    const malesPerSpecies = males.reduce((acc: any, curr: any) => {
             acc[curr.species] === undefined ? acc[curr.species] = 1 : acc[curr.species]++
             
             return acc
         }, {})
-    }
 
     const mostMales = Object.entries(malesPerSpecies).sort((a: [string, any], b: [string, any]) => b[1] - a[1])[0][0]
     
     
-    const statistics = {
+    const statistics: stats = {
         top3Characters,
         mostAssignedStatus,
         popularHumanLocation,

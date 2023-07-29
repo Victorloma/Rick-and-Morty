@@ -18,3 +18,10 @@ export interface Character {
   url: string;
   created: string;
 }
+
+export type Statistics = {
+    top3Characters: Character[],
+    mostAssignedStatus: string,
+    popularHumanLocation: string,
+    mostMales: string,
+}
