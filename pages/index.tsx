@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import List from '../components/List'
-import { Layout, Menu, Typography } from 'antd'
-
-const { Header, Content, Footer } = Layout
+import { Typography } from 'antd'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -14,6 +13,7 @@ export default function Home() {
       </Head>
 
       <main>
+          <Header />
           <Typography.Title style={{ textAlign: 'center' }} level={1}>
               The Rick and Morty universe
           </Typography.Title>

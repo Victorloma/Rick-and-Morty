@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Character } from '../../types/types'
 import useSWR from 'swr'
 import { Image, Typography } from 'antd'
+import Header from '../../components/Header'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -18,6 +19,7 @@ const characterDetails = () => {
 
   return (
     <div className='character-details'>
+      <Header />
       <Typography.Title level={2}>Character Details</Typography.Title>
       <Typography.Title level={4}>{data.name}</Typography.Title>
       <Image src={data.image} alt={`Picture of ${data.name}`} />

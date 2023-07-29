@@ -5,11 +5,11 @@ import { Character, Statistics } from '../../../types/types'
 
 type CharacterList = Character[]
 
-type stats = Statistics
+type Stats = Statistics
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<stats>
+  res: NextApiResponse<Stats>
 ) {
     // top 3 characters with most episodes
     const top3Characters: CharacterList = data.sort((a, b) => b.episode.length - a.episode.length).slice(0, 3)
@@ -60,7 +60,7 @@ export default function handler(
     const mostMales = Object.entries(malesPerSpecies).sort((a: [string, any], b: [string, any]) => b[1] - a[1])[0][0]
     
     
-    const statistics: stats = {
+    const statistics: Stats = {
         top3Characters,
         mostAssignedStatus,
         popularHumanLocation,
