@@ -2,8 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/api/characters": "pages/api/characters.js",
   "/[characterId]": "pages/[characterId].js",
-  "/statistics": "pages/statistics.js",
   "/api/characters/[characterId]": "pages/api/characters/[characterId].js",
-  "/": "pages/index.js"
+  "/statistics": "pages/statistics.js",
+  "/api/statistics": "pages/api/statistics.js"
 }
