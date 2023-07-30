@@ -1,11 +1,12 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/[characterId]": "pages/[characterId].js",
-  "/statistics": "pages/statistics.js",
-  "/api/characters": "pages/api/characters.js",
+  "/[characterId]": "pages/[characterId].html",
   "/api/characters/[characterId]": "pages/api/characters/[characterId].js",
-  "/api/statistics": "pages/api/statistics.js"
+  "/api/characters": "pages/api/characters.js",
+  "/api/statistics": "pages/api/statistics.js",
+  "/": "pages/index.html",
+  "/statistics": "pages/statistics.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }
