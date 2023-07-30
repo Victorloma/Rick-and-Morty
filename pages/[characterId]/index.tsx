@@ -38,31 +38,44 @@ const characterDetails = () => {
         </div>
       </>
   )
+
+  const day = data.created.slice(8, 10)
+  const month = data.created.slice(5, 7)
+  const year = data.created.slice(0, 4)
+
   return (
     <>
       <Header />
       <div className='character-details'>
         <h1 className='Chewy'>Character Details</h1>
         <Typography.Title level={2} style={{ color: 'white' }}>{data.name}</Typography.Title>
-        <Image style={{ borderRadius: '0.5rem'}} src={data.image} alt={`Picture of ${data.name}`} />
-        <div className='character-detail'>
-            <p><span>Species: </span>{data.species}</p>
-        </div>
-        <div className='character-detail'>
-          <p><span>Created at: </span>{data.created.slice(8, 10)}-{data.created.slice(5, 7)}-{data.created.slice(0, 4)}</p>
-        </div>
-        <div className='character-detail'>
-            <p><span>Status: </span>{data.status}</p>
-        </div>
-        <div className='character-detail'>
-            <p><span>Gender: </span>{data.gender}</p>
-        </div>
-        <div className='character-detail'>
-            <p><span>Location: </span>{data.location.name}</p>
-        </div>
-        <div className='character-detail'>
-            <p><span>Amount of episodes: </span>{data.episode.length}</p>
-        </div>
+        <Image style={{ borderRadius: '0.5rem' }} src={data.image} alt={`Picture of ${data.name}`} />
+        <table>
+            <tr>
+                <th>Species</th>
+                <td>{data.species}</td>
+            </tr>
+            <tr>
+                <th>Created at</th>
+                <td>{day}-{month}-{year}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{data.status}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{data.gender}</td>
+            </tr>
+            <tr>
+                  <th>Location</th>
+                  <td>{data.location.name}</td>
+            </tr>
+            <tr>
+                  <th>Number of episodes</th>
+                  <td>{data.episode.length}</td>
+            </tr>
+        </table>
       </div>
     </>
   )

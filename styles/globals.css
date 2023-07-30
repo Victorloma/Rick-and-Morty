@@ -62,7 +62,7 @@ main {
 .menu {
   gap: 1rem;
 }
-
+/* 
 .character-detail {
   color: white;
   margin-top: 0.75rem;
@@ -71,7 +71,7 @@ main {
 .character-detail > p > span {
   font-weight: 700;
   margin-right: 0.5rem;
-}
+} */
 
 .Chewy {
   font-family: 'Chewy';
@@ -96,4 +96,18 @@ main {
   background-color: #9eebcf;
   padding: 2rem 4rem;
   border-radius: 1rem;
+}
+
+table,
+th,
+td {
+  margin: auto;
+  border: 1px solid white;
+  border-collapse: collapse;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+table {
+  margin-top: 3rem;
 }

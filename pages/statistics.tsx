@@ -1,12 +1,11 @@
 import React from 'react'
 import useSWR from 'swr'
-import { Character, Statistics } from '../types/types'
+import { Character } from '../types/types'
 import { List, Typography, Spin, Result } from 'antd'
 import CharacterCard from '../components/CharacterCard'
 import Header from '../components/Header'
 
 type character = Character
-type stats = Statistics
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -37,7 +36,6 @@ const statistics = () => {
             
         </>
     )
-
     return (
         <>
             <Header />
@@ -55,24 +53,27 @@ const statistics = () => {
                         xl: 3,
                         xxl: 3,
                     }}
-                    renderItem={(item: character) => (
+                    renderItem={(item: character, i: number) => (
                     <List.Item>
-                        <CharacterCard key={item.id} character={item} />
+                        <CharacterCard key={item.id} character={item} rank={i} />
                     </List.Item>
                     )}
                 />
-                <div>
-                    <Typography.Title level={4} style={{ color: 'white', marginBottom: '0rem' }}>Most characters in the show currently a status of:</Typography.Title>
-                    <Typography.Text strong italic style={{ color: 'white', marginTop: '0rem' }}>{data.mostAssignedStatus}</Typography.Text>
-                </div>
-                <div>
-                    <Typography.Title level={4} style={{ color: 'white', marginBottom: '0rem' }}>Favorite location for humans:</Typography.Title>
-                    <Typography.Text strong italic style={{ color: 'white', marginTop: '0rem' }}>{data.popularHumanLocation}</Typography.Text>
-                </div>
-                <div>
-                    <Typography.Title level={4} style={{ color: 'white', marginBottom: '0rem' }}>Species with most males:</Typography.Title>
-                    <Typography.Text strong italic style={{ color: 'white', marginTop: '0rem' }}>{data.mostMales}</Typography.Text>
-                </div>     
+
+                <table>
+                    <tr>
+                        <th>Most common status</th>
+                        <td>{data.mostAssignedStatus}</td>
+                    </tr>
+                    <tr>
+                        <th>Favorite location for humans</th>
+                        <td>{data.popularHumanLocation}</td>
+                    </tr>
+                    <tr>
+                        <th>Species with most males</th>
+                        <td>{data.mostMales}</td>
+                    </tr>
+                </table>
             </div>
         </>
     )

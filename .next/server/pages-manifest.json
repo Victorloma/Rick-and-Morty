@@ -3,6 +3,9 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
+  "/[characterId]": "pages/[characterId].js",
   "/statistics": "pages/statistics.js",
-  "/[characterId]": "pages/[characterId].js"
+  "/api/characters": "pages/api/characters.js",
+  "/api/characters/[characterId]": "pages/api/characters/[characterId].js",
+  "/api/statistics": "pages/api/statistics.js"
 }
