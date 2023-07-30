@@ -1,6 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
-import { Character } from '../types/types'
+import { Character, Statistics } from '../types/types'
 import { List, Typography, Spin, Result } from 'antd'
 import CharacterCard from '../components/CharacterCard'
 import Header from '../components/Header'
@@ -10,7 +10,7 @@ type character = Character
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 const statistics = () => {
-    const { data, error } = useSWR('/api/statistics', fetcher)
+    const { data, error } = useSWR<Statistics>('/api/statistics', fetcher)
     if (error) return (
         <>
             <Header />

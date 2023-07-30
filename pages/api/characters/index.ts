@@ -11,5 +11,5 @@ export default function handler(
   res: NextApiResponse<CharacterList>
 ) {
 
-  res.status(200).send(data)
+  res.status(200).send(data as CharacterList)
 }

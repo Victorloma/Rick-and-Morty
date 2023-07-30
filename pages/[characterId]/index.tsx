@@ -39,9 +39,7 @@ const characterDetails = () => {
       </>
   )
 
-  const day = data.created.slice(8, 10)
-  const month = data.created.slice(5, 7)
-  const year = data.created.slice(0, 4)
+  const date = new Date(data.created).toLocaleDateString()
 
   return (
     <>
@@ -57,7 +55,7 @@ const characterDetails = () => {
             </tr>
             <tr>
                 <th>Created at</th>
-                <td>{day}-{month}-{year}</td>
+                <td>{date}</td>
             </tr>
             <tr>
                 <th>Status</th>

@@ -6,18 +6,7 @@ import CharacterCard from './CharacterCard'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-type PaginationPosition = 'top' | 'bottom' | 'both'
-type PaginationAlign = 'start' | 'center' | 'end'
-type DefaultPageSize = 25
-
-const positionOptions = ['top', 'bottom', 'both']
-const alignOptions = ['start', 'center', 'end']
-const defaultPageSize: DefaultPageSize = 25
-
 const App: React.FC = () => {
-    const [position, setPosition] = useState<PaginationPosition>('bottom')
-    const [align, setAlign] = useState<PaginationAlign>('center')
-
     const { data, error } = useSWR<Character[]>('/api/characters', fetcher)
 
     if (error) return (
@@ -42,7 +31,7 @@ const App: React.FC = () => {
     return (
         <>
             <List
-                pagination={{ position, align, defaultPageSize}}
+                pagination={{ position: 'bottom', align: 'center', defaultPageSize: 25, pageSizeOptions: [10, 25, 50, 100]}}
                 dataSource={data}
                 grid={{
                     gutter: 16,
@@ -53,6 +42,7 @@ const App: React.FC = () => {
                     xl: 4,
                     xxl: 5,
                 }}
+                style={{ padding: '4rem' }}
                 renderItem={(item) => (
                 <List.Item>
                     <CharacterCard key={item.id} character={item} />

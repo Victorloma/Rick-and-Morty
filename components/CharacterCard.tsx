@@ -17,7 +17,7 @@ const CharacterCard: React.FC<Props> = ({ character, rank }) => {
     <Link href={`/${character.id}`} className='card'>
       <Card
         hoverable
-        style={{ margin: "auto", width: 320, backgroundColor: '#9eebcf', borderColor: 'gray'}}
+        style={{ margin: "auto", backgroundColor: '#9eebcf', borderColor: 'gray'}}
         cover={<img alt="An image of a Rick and Morty character" src={character.image} />}
       >
         <Meta title={title} description={character.status} />

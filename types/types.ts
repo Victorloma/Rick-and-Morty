@@ -1,10 +1,22 @@
+export enum CharacterStatus {
+  Alive = 'Alive',
+  Dead = 'Dead',
+  Unknown = 'unknown',
+}
+
+export enum Gender {
+  Female = 'Female',
+  Male = 'Male',
+  Unknown = 'unknown',
+}
+
 export interface Character {
   id: number;
   name: string;
-  status: string;
+  status: CharacterStatus;
   species: string;
   type: string;
-  gender: string;
+  gender: Gender;
   origin: {
     name: string;
     url: string
