@@ -36,7 +36,7 @@ const humansPerLocation = humans.reduce((acc: any, curr: any) => {
         return acc
     }, {})
 
-export const popularHumanLocation = Object.entries(humansPerLocation).sort((a: any, b: any) => b[1] - a[1])[0][0]
+export const popularHumanLocation = Object.entries(humansPerLocation).sort((a: [string, any], b: [string, any]) => b[1] - a[1])[0][0]
 
 
 // species with most males
